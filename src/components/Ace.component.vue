@@ -229,6 +229,7 @@
           }
         });
       }
+      this.editor.commands.removeCommand('find');
 
       if (keyboardHandler) {
         this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
