@@ -160,6 +160,7 @@
         annotations,
         markers,
         name,
+        hideCursorLayer
       } = this.$props;
 
       this.editor = ace.edit(name);
@@ -230,6 +231,10 @@
         });
       }
       this.editor.commands.removeCommand('find');
+
+      if (hideCursorLayer === true) {
+        this.editor.renderer.$cursorLayer.element.style.display = "none"
+      }
 
       if (keyboardHandler) {
         this.editor.setKeyboardHandler('ace/keyboard/' + keyboardHandler);
